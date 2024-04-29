@@ -5,7 +5,10 @@ import { inter } from "@/config/fonts";
 
 
 export const metadata: Metadata = {
-  title: "Toge | App",
+  title: {
+    template: '%s - Toge | App',
+    default: 'Home - Toge | App'
+  },
   description: "The better Ecommerce app",
 };
 
