@@ -1,20 +1,15 @@
 import { initialData } from "./seed";
 import { prisma } from '../lib/prisma';
-import Image from 'next/image';
-
-interface Abc{
-    aasd: String;
-}
 
 async function main() {
     
-  
+    await prisma.user.deleteMany();
     await prisma.productImages.deleteMany();
     await prisma.product.deleteMany();
     await prisma.category.deleteMany();
     
 
-    const { categories, products } = initialData;
+    const { categories, products, users } = initialData;
 
     const categoriesData = categories.map( (name) => ({ name }));
 
@@ -50,9 +45,10 @@ async function main() {
         });
     })
     
-    // await prisma.product.createMany({
-    //     data: productsToInsert
-    // });
+    await prisma.user.createMany({
+        data: users
+    });
+
 
 
 

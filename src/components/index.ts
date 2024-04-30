@@ -1,3 +1,4 @@
+export { Provider } from "./provider/SessionProvider";
 export { Footer } from "./ui/navigation/Footer";
 export { PageNotFound } from "./ui/not-found/PageNotFound";
 export { Pagination } from "./ui/navigation/Pagination";
